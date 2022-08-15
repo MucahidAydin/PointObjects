@@ -1,6 +1,22 @@
 public class Point {
     private int x;
     private int y;
+    static int counter;
+
+    {
+        x = 0;
+        y = 0;
+    }
+
+    static {
+        counter = 0;
+    }
+
+    public Point(int x, int y) {
+        this.x = x;
+        this.y = y;
+        counter++;
+    }
 
     public int getX() {
         return x;
@@ -37,9 +53,7 @@ public class Point {
     }
 
     public Point clone() {
-        Point newPoint = new Point();
-        newPoint.x = this.x;
-        newPoint.y = this.y;
+        Point newPoint = new Point(this.x, this.y);
         return newPoint;
     }
 
